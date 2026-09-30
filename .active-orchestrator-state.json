@@ -1,0 +1,270 @@
+﻿{
+    "version":  4,
+  "step": "agents",
+    "owner":  "active-orchestrator",
+    "discovery":  {
+                      "created_by":  "discovery-research",
+                      "sources":  [
+                                      "https://dentalsoft.com.ar",
+                                      "https://dentalcore.app",
+                                      "https://bilog.com.ar",
+                                      "https://web.dentaltec.com.ar",
+                                      "https://odonthia.com",
+                                      "https://www.softwaredentalink.com",
+                                      "https://dentiqa.app/ar",
+                                      "https://www.dentaly.com.ar",
+                                      "https://dentatools.co/ar",
+                                      "https://www.clinia.com.ar/odontologia",
+                                      "https://www.doctocliq.com",
+                                      "https://www.dentidesk.com",
+                                      "https://agendapro.com",
+                                      "https://pro.doctoralia.com.mx",
+                                      "https://www.nimbo-x.com",
+                                      "https://www.simplesdental.com",
+                                      "https://www.medesk.net/es",
+                                      "https://www.opendental.com",
+                                      "https://www.curvedental.com",
+                                      "https://www.dentally.com/en-gb",
+                                      "https://carestack.com",
+                                      "https://www.nexhealth.com",
+                                      "https://www.doctolib.fr"
+                                  ],
+                      "sources_fetched_at":  "2026-09-29",
+                      "competitors":  [
+                                          {
+                                              "name":  "DentalSoft",
+                                              "notes_file":  "docs/discovery/informe-discovery.md"
+                                          },
+                                          {
+                                              "name":  "DentalCore",
+                                              "notes_file":  "docs/discovery/informe-discovery.md"
+                                          },
+                                          {
+                                              "name":  "Bilog",
+                                              "notes_file":  "docs/discovery/informe-discovery.md"
+                                          },
+                                          {
+                                              "name":  "DentalTec",
+                                              "notes_file":  "docs/discovery/informe-discovery.md"
+                                          },
+                                          {
+                                              "name":  "Odonthia",
+                                              "notes_file":  "docs/discovery/informe-discovery.md"
+                                          }
+                                      ],
+                      "pdf":  "docs/discovery/informe-discovery.pdf",
+                      "problema":  "Los consultorios pierden turnos y sufren ausentismo alto por gestionar agenda por WhatsApp/telefono manual.",
+                      "usuarios":  [
+                                       "Paciente: reserva online sin llamar",
+                                       "Recepcionista: gestiona agenda multi-profesional y confirma manual (v1)",
+                                       "Odontologo/dueno: configura agenda, ve ocupacion y cobros"
+                                   ],
+                      "casos_de_uso":  [
+                                           "Como paciente, quiero ver horarios libres reales y reservar online 24/7",
+                                           "Como paciente, quiero confirmar/cancelar/reprogramar con 24h de anticipacion",
+                                           "Como recepcionista, quiero agenda multi-profesional/sillon sin solapamientos con sobreturnos y lista de espera",
+                                           "Como odontologo, quiero cobrar sena por Mercado Pago y facturar (ARCA)",
+                                           "Como dueno, quiero ver ocupacion, ausentismo y cobros"
+                                       ],
+                      "funcionalidades_necesarias":  [
+                                                         "Reserva online 24/7 con disponibilidad real",
+                                                         "Agenda multi-profesional/sillon con duracion variable, bloqueos y anti-solapamiento",
+                                                         "Confirmacion/cancelacion/reprogramacion con 24h",
+                                                         "Sobreturnos con tope + lista de espera",
+                                                         "Confirmacion manual por WhatsApp desde la app (costo cero)",
+                                                         "Sena online Mercado Pago + facturacion ARCA + reportes basicos"
+                                                     ],
+                      "funcionalidades_opcionales":  [
+                                                         "Odontograma + ficha clinica (backlog)",
+                                                         "Portal del paciente (backlog)",
+                                                         "Recordatorios automaticos WhatsApp API (backlog, v1 manuales)",
+                                                         "Campanas y recuperacion de inactivos (fuera de alcance)",
+                                                         "Liquidacion/validacion online de obras sociales (radar v2)"
+                                                     ],
+                      "reglas_de_negocio":  [
+                                                "No cancelar ni reprogramar con menos de 24h",
+                                                "Duracion variable por prestacion sin solapamientos",
+                                                "Sena obligatoria para reserva online",
+                                                "Tope de sobreturnos por dia/profesional"
+                                            ],
+                      "integraciones":  [
+                                            "WhatsApp manual desde la app v1 (API automatica en v2)",
+                                            "Mercado Pago",
+                                            "ARCA",
+                                            "Google Calendar"
+                                        ],
+                      "restricciones":  [
+                                            "Presupuesto cero: solo servicios gratuitos",
+                                            "Proyecto academico (Metodologia I), sin plazo duro ni stack impuesto"
+                                        ],
+                      "riesgos":  [
+                                      "Pacientes no adoptan reserva online (supuesto sin probar)",
+                                      "WhatsApp automatico impagable, v1 manual poco diferencial",
+                                      "ARCA traba el semestre por complejidad",
+                                      "Alcance (4 integraciones + multi-sillon) vs tiempos"
+                                  ],
+                      "preguntas_abiertas":  [
+                                                 "Monto de la sena",
+                                                 "Tope numerico de sobreturnos",
+                                                 "Catalogo de prestaciones con duraciones",
+                                                 "Una sede o multi-sucursal en v1",
+                                                 "Identificacion del paciente: DNI o nombre+telefono"
+                                             ]
+                  },
+    "kb":  {
+               "created_by":  "kb-creator",
+               "source":  "ingest",
+               "discovery":  {
+                                 "problem":  "Los consultorios pierden turnos y sufren ausentismo alto por gestionar agenda por WhatsApp/telefono manual.",
+                                 "system_type":  "web_app (inferred, low confidence)",
+                                 "domain":  "odontologia",
+                                 "scale":  "public_multi_user",
+                                 "stack":  "Por definir (inferred, low confidence)",
+                                 "needs_infra":  true
+                             },
+               "files":  [
+                             "knowledge-base/01_vision_y_objetivos.md",
+                             "knowledge-base/02_descripcion_general.md",
+                             "knowledge-base/03_actores_y_roles.md",
+                             "knowledge-base/04_modelo_de_datos.md",
+                             "knowledge-base/05_reglas_de_negocio.md",
+                             "knowledge-base/06_funcionalidades.md",
+                             "knowledge-base/07_flujos_principales.md",
+                             "knowledge-base/08_arquitectura_propuesta.md",
+                             "knowledge-base/09_decisiones_y_supuestos.md",
+                             "knowledge-base/10_preguntas_abiertas.md",
+                             "knowledge-base/11_pagos_facturacion_e_integraciones.md",
+                              "knowledge-base/README.md"
+                          ]
+            },
+    "roadmap":  {
+                    "created_by":  "roadmap-generator",
+                    "source":  "CHANGES.md",
+                    "changes":  [
+                                    "C-01",
+                                    "C-02",
+                                    "C-03",
+                                    "C-04",
+                                    "C-05",
+                                    "C-06",
+                                    "C-07",
+                                    "C-08",
+                                    "C-09",
+                                    "C-10",
+                                    "C-11",
+                                    "C-12"
+                                ]
+                },
+    "skills":  {
+        "recommended":  [
+                        {
+                            "skill":  "supabase/agent-skills@supabase-postgres-best-practices",
+                            "source":  "supabase/agent-skills",
+                            "installs":  "421.8K",
+                            "why":  "Postgres gratis Supabase/Neon + RLS/indices para anti-solapamiento (profesional,sillon,intervalo) C-04 + migraciones/seed C-02"
+                        },
+                        {
+                            "skill":  "vercel-labs/agent-skills@vercel-react-best-practices",
+                            "source":  "vercel-labs/agent-skills",
+                            "installs":  "752.6K",
+                            "why":  "Frontend reserva 24/7/agenda/reportes en React + deploy Vercel free-tier, cubre ADR-01 opciones A/C"
+                        },
+                        {
+                            "skill":  "mattpocock/skills@tdd",
+                            "source":  "mattpocock/skills",
+                            "installs":  "981.1K",
+                            "why":  "TDD red-green para concurrencia agenda (doble reserva 1 gana), doble reclamo waitlist y webhook MP/ARCA idempotente exigidos en todos los changes"
+                        },
+                        {
+                            "skill":  "supabase/agent-skills@supabase",
+                            "source":  "supabase/agent-skills",
+                            "installs":  "298.4K",
+                            "why":  "DB+Auth+SDK costo cero para monolito web+API propia, alternativa auth panel RBAC C-03"
+                        },
+                        {
+                            "skill":  "anthropics/skills@webapp-testing",
+                            "source":  "anthropics/skills",
+                            "installs":  "166.2K",
+                            "why":  "Testing reserva publica /reservar y /turnos/:token sin login con Playwright (C-05/C-06)"
+                        },
+                        {
+                            "skill":  "microsoft/playwright-cli@playwright-cli",
+                            "source":  "microsoft/playwright-cli",
+                            "installs":  "168.8K",
+                            "why":  "E2E disponibilidad real, ventana 24h borde 23:59/24:01 y deep-link wa.me costo cero C-08"
+                        },
+                        {
+                            "skill":  "mrgoonie/claudekit-skills@backend-development",
+                            "source":  "mrgoonie/claudekit-skills",
+                            "installs":  "2.2K",
+                            "why":  "Patrones API domain/application/infrastructure para casos reservar/confirmar/sobreturno/conciliar/facturar segun 08_arquitectura"
+                        },
+                        {
+                            "skill":  "prisma/skills@prisma-postgres",
+                            "source":  "prisma/skills",
+                            "installs":  "314.3K",
+                            "why":  "ORM+migraciones Postgres si ADR-01 elige Node/Nest o monolito Next.js opciones B/C"
+                        },
+                        {
+                            "skill":  "prisma/skills@prisma-database-setup",
+                            "source":  "prisma/skills",
+                            "installs":  "321.7K",
+                            "why":  "Setup inicial DB + Migracion 001/seed C-02 si stack Node/Prisma"
+                        },
+                        {
+                            "skill":  "vercel-labs/agent-skills@deploy-to-vercel",
+                            "source":  "vercel-labs/agent-skills",
+                            "installs":  "141.3K",
+                            "why":  "Deploy free-tier + APP_BASE_URL publica para webhooks MP y enlaces token_publico"
+                        },
+                        {
+                            "skill":  "upstash/skills@upstash-redis-js",
+                            "source":  "upstash/skills",
+                            "installs":  "14.3K",
+                            "why":  "Job timeout SENA_TIMEOUT_MIN libera pendiente_sena + rate-limit login C-03 5/60s en tier gratuito (Redis serverless opcional)"
+                        },
+                        {
+                            "skill":  "mindrally/skills@nextjs-react-typescript",
+                            "source":  "mindrally/skills",
+                            "installs":  "5.1K",
+                            "why":  "Monolito Next.js+TS opcion C ADR-01: frontend+API unica desplegable costo cero"
+                        },
+                        {
+                            "skill":  "currents-dev/playwright-best-practices-skill@playwright-best-practices",
+                            "source":  "currents-dev/playwright-best-practices-skill",
+                            "installs":  "87.6K",
+                            "why":  "Complemento best-practices E2E para C-04/C-05/C-06 sin huecos fantasma"
+                        }
+                    ],
+        "installed":  [
+            "supabase/agent-skills@supabase-postgres-best-practices",
+            "vercel-labs/agent-skills@vercel-react-best-practices",
+            "mattpocock/skills@tdd",
+            "anthropics/skills@webapp-testing"
+        ],
+        "install_notes": "1,2,3,5 ya estaban instaladas globalmente (verificado npx skills list -g); 6 (microsoft/playwright-cli@playwright-cli) no admite instalacion global (PromptScript) — se cubre E2E con webapp-testing"
+    },
+    "registry":  {
+        "created_by":  "skill-registry",
+        "file":  ".atl/skill-registry.md",
+        "skills":  [
+            "supabase-postgres-best-practices",
+            "vercel-react-best-practices",
+            "tdd",
+            "webapp-testing",
+            "kb-creator",
+            "roadmap-generator",
+            "discovery-research",
+            "web-scraper",
+            "find-skills",
+            "active-orchestrator"
+        ],
+        "conventions":  "none yet (CLAUDE.md/AGENTS.md pending agent-instruction)"
+    },
+    "agents":  {
+        "created_by":  "agent-instruction",
+        "via":  "agents-md-generator (equivalent skill in this harness)",
+        "files":  ["AGENTS.md", "CLAUDE.md"],
+        "reglas_applied":  ["R1-datos-pacientes", "R2-secretos", "R3-anti-solapamiento-db", "R4-tdd-seams", "R5-sin-tautologias", "R6-commits", "R7-tipado-condicional-ADR-01"]
+    }
+}
