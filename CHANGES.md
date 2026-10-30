@@ -253,7 +253,8 @@ Odontograma/ficha clínica · Portal del paciente · Recordatorios automáticos 
 ---
 
 ### [C-08] `whatsapp-manual-confirmacion`
-- **Estado**: `[ ]` pendiente
+- **Estado**: `[ ]` **preparado** (proposal, design, spec y tasks listos; NO implementado, verificado ni archivado — instancia posterior)
+- **Artefactos**: `openspec/changes/c-08-whatsapp-manual-confirmacion/` (5 requirements, 18 escenarios, revisado con `revisor-escenarios-turnos`)
 - **Scope**: Confirmación/recordatorio manual costo cero con log (sin API Meta)
   - Botón por turno en panel/agenda abre `wa.me/<tel>?text=<plantilla: profesional, fecha/hora, seña, ventana 24h>` (RN-CONF-01/03, US-021 CA-1); al enviar, `POST /turnos/:id/whatsapp-log` registra `{tipo, enviado_por, enviado_en}` en `MensajeWhatsApp` (US-021 CA-2)
   - Panel "pendientes de confirmación del día siguiente" (Flujo 3); marcar confirmado manual tras respuesta del paciente; ningún flujo exige API WhatsApp (RN-CONF-02, US-021 CA-3)
@@ -264,8 +265,10 @@ Odontograma/ficha clínica · Portal del paciente · Recordatorios automáticos 
   - `knowledge-base/06_funcionalidades.md` §US-021
   - `knowledge-base/07_flujos_principales.md` §Flujo 3
   - `knowledge-base/11_pagos_facturacion_e_integraciones.md` §WhatsApp manual
-  - `knowledge-base/05_reglas_de_negocio.md` §RN-CONF-01/02/03
+  - `knowledge-base/05_reglas_de_negocio.md` §RN-CONF-01/02/03 y §RN-TUR-01/04
   - `knowledge-base/04_modelo_de_datos.md` §MensajeWhatsApp
+  - `knowledge-base/10_preguntas_abiertas.md` §Monto de la seña (OQ-1 del design)
+  - `knowledge-base/03_actores_y_roles.md` §Panel interno (auth del endpoint y del panel)
 
 ---
 
