@@ -52,8 +52,41 @@ Fuente de verdad: [.atl/skill-registry.md](.atl/skill-registry.md) (no versionad
 | **Frontend** | Reserva pública, agenda, reportes | `vercel-react-best-practices`, `webapp-testing` |
 | **QA / E2E** | Flujos sin login, ventana 24h, `wa.me` | `webapp-testing` |
 | **Orquestación** | SDD / OPSX / docs | `kb-creator`, `roadmap-generator`, `discovery-research`, `skill-registry`, `find-skill`, `active-orchestrator` |
+| **Proyecto** | Auditar specs de turnos antes de implementar | `revisor-escenarios-turnos` (propia, versionada en el repo) |
 
 Cargá la skill correspondiente al contexto ANTES de escribir código.
+
+### Skill propia: `revisor-escenarios-turnos`
+
+Vive en `.opencode/skills/revisor-escenarios-turnos/SKILL.md` y está versionada en el repo.
+
+- **Cuándo usarla**: al preparar o revisar un change de turnos (`propose` / `verify`), antes de escribirlo
+  código. Es obligatoria antes de `/opsx:apply` en cualquier change que toque agenda, turnos, ventana 24h,
+  pagos o espera.
+- **Qué necesita**: la ruta del change, la capability afectada y la lista de RN del scope (sale de
+  "Leer antes" en `CHANGES.md`). Si falta alguno, lo pide; no completa el scope solo.
+- **Qué devuelve**: tabla de cobertura RN × escenario, hallazgos con severidad (`BLOQUEANTE` / `MAYOR` /
+  `MENOR`) y cita `archivo:línea`, preguntas abiertas detectadas y una sección "no verificado".
+- **Cómo revisar su salida**: todo hallazgo tiene que citar una RN o un archivo de la KB; ningún valor
+  numérico puede aparecer sin respaldo en la KB (R5); los `BLOQUEANTE` se corrigen antes de implementar.
+  La skill **solo reporta**, no reescribe la spec: el fix lo hacemos nosotros.
+
+---
+
+## MCP integrado: Context7
+
+No es una skill: es una integración que expone herramientas externas.
+
+| Aspecto | Detalle |
+|---|---|
+| **Propósito** | Traer documentación actualizada de librerías y APIs al contexto del agente |
+| **Tipo** | Servidor MCP remoto (upstash/context7), `https://mcp.context7.com/mcp` |
+| **Herramientas que usamos** | `resolve-library-id` (ubicar la librería) y `query-docs` (traer fragmentos y ejemplos) |
+| **Cuándo usarlo** | Al preparar `design.md` o al dudar del comportamiento real de una API del stack (`sqlite3`, `urllib.parse`, `http.server`), y ante cualquier librería que no esté en la KB |
+| **Límites** | Solo lectura de documentación pública. No modifica el repo ni la base de datos. No se le pasan datos de pacientes ni credenciales. La API key, si se usa, va en `.env` y nunca al repo (R2) |
+| **Configuración y verificación** | Ver `README.md` §MCP y `docs/skills-mcp/mcp.json.example` |
+
+---
 
 > Los compact rules de cada skill los resuelve el orquestador desde `.atl/skill-registry.md` (generado por `skill-registry`; no versionado — no está en el repo). Esta tabla solo mapea skill→rol.
 
@@ -91,8 +124,9 @@ El plan de implementación completo está en [CHANGES.md](CHANGES.md). Resumen:
 1. Leer la KB relevante (knowledge-base/)        → entender el dominio
 2. Identificar el change en CHANGES.md           → respetar dependencias
 3. /opsx:propose C-NN-nombre                     → proposal + design + specs + tasks
-4. Implementar las tasks (cargando skills)       → respetando las reglas duras
-5. /opsx:archive C-NN-nombre + marcar [x]        → cerrar el change
+4. Revisar la spec con revisor-escenarios-turnos → cerrar huecos y valores inventados
+5. Implementar las tasks (cargando skills)       → respetando las reglas duras
+6. /opsx:archive C-NN-nombre + marcar [x]        → cerrar el change
 ```
 
 Aplicar TODAS las reglas duras en cada paso. Ante conflicto entre la KB y este archivo, las reglas duras prevalecen.
