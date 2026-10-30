@@ -15,8 +15,8 @@
 | Dato | Valor |
 |---|---|
 | Repositorio | https://github.com/lauty-naranjo/SDD-Active_Stack |
-| Commit de entrega | `pendiente` — se registra al crear el commit de entrega (ver «Estado de la entrega») |
-| Video de demostración | `pendiente` — grabación a cargo del equipo (≤5 min) |
+| Commit de entrega | `360f5a3` — «docs(c-08): prepara whatsapp-manual-confirmacion con la spec revisada»; el estado entregado es el tip de `main` |
+| Video de demostración | **Pendiente de enlace** — grabación a cargo de Lautaro Naranjo y Martín Escudero (≤5 min); reemplazar este campo por el enlace accesible antes de subir el zip |
 | Ficha de investigación | [`docs/skills-mcp/investigacion.md`](docs/skills-mcp/investigacion.md) |
 | Informe de aplicación | [`docs/skills-mcp/aplicacion.md`](docs/skills-mcp/aplicacion.md) |
 | Evidencias | [`docs/skills-mcp/evidencias/`](docs/skills-mcp/evidencias/) |
@@ -79,6 +79,6 @@ python -m pytest -q        # 29 verdes · 1 rojo preexistente (test_confirmar_si
 | Informe de aplicación ≤2 páginas | ✅ |
 | Evidencia de uso de la skill y del MCP | ✅ evidencias 01–04 |
 | Al menos una omisión/error detectado con antes y después | ✅ 15 hallazgos, 3 antes/después |
-| Historial de commits | ⏳ pendiente del commit de entrega |
-| Video ≤5 min | ⏳ pendiente de grabación |
+| Historial de commits | ✅ commits del TP2 en `main` (skill, MCP + ficha, change C-08 y entrega). **Nota**: el historial completo figura a nombre de un solo integrante (`lauty-naranjo`), incluidos los commits previos del TP1 |
+| Video ≤5 min | ⏳ **pendiente** — lo graban ambos integrantes; el enlace se agrega en este archivo |
 | Datos ficticios y sin secretos | ✅ (`Juan Pérez Demo`, `tur-demo-001`, sin credenciales) |
