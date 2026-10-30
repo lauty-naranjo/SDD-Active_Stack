@@ -17,6 +17,5 @@ node_modules/
 Thumbs.db
 .DS_Store
 
-# Entregables y material local (no van al repo)
-TP-Skills-MCP-*.zip
+# Material local (no va al repo)
 mcp-skills.pdf
