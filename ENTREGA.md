@@ -15,7 +15,7 @@
 | Dato | Valor |
 |---|---|
 | Repositorio | https://github.com/lauty-naranjo/SDD-Active_Stack |
-| Commit de entrega | `360f5a3` — «docs(c-08): prepara whatsapp-manual-confirmacion con la spec revisada»; el estado entregado es el tip de `main` |
+| Commit de entrega | `ee2ac2b` — «docs(c-08): prepara whatsapp-manual-confirmacion con la spec revisada»; el estado entregado es el tip de `main` |
 | Ficha de investigación | [`docs/skills-mcp/investigacion.md`](docs/skills-mcp/investigacion.md) |
 | Informe de aplicación | [`docs/skills-mcp/aplicacion.md`](docs/skills-mcp/aplicacion.md) |
 | Evidencias | [`docs/skills-mcp/evidencias/`](docs/skills-mcp/evidencias/) |
